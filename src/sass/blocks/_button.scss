@@ -1,0 +1,39 @@
+.button {
+    width: 128px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FFFFFF;
+    border: 1px solid #EC994B;
+    border-radius: 41px;
+    cursor: pointer;
+    transition: 0.5s all;
+    &:hover {
+        transform: scale(1.05, 1.05);
+    }
+    a {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 100%;
+        letter-spacing: 0.01em;
+        color: $color-yellow;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+    }
+    &_yellow {
+        background: $color-yellow;
+        a {
+            color: #FFFFFF;
+        }
+    }
+    &_w150px {
+        width: 150px;
+    }
+    &_w200px {
+        width: 200px;
+    }
+}

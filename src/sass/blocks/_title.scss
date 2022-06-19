@@ -1,0 +1,27 @@
+.title {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    text-align: center;
+    color: #222224;
+    margin-top: 16px;
+    &__sub {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        color: #EC994B;
+    }
+    &_64px {
+        font-size: 64px;
+        line-height: 120%;
+    }
+    &_tal {
+        text-align: left;
+    }
+    
+}
