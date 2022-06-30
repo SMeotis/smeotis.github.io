@@ -1,12 +1,21 @@
 .promo {
     min-height: 586px;
     &__wrapper {
-        display: grid;
-        grid-template-columns: 535px 653px;
+        display: flex;
         justify-content: space-between;
+        background: $promo-bg 112% 0 no-repeat;
+        position: relative;
     }
-    &__left {
+    &__text-block {
+        width: 535px;
         padding: 46px 0 31px 0;
+    }
+    &__img-block {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 590px;
+        
     }
     &__descr {
         font-family: 'Montserrat';
@@ -20,10 +29,7 @@
     }
     &__buttons {
         margin-top: 35px;
-        width: 385px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        max-width: 390px;
     }
     &__customer-review {
         width: 285px;
@@ -70,10 +76,6 @@
             color: #000000;
         }
     }
-    &__right {
-        background: $promo-bg top right no-repeat;
-        position: relative;
-    }
     &__courier {
         display: flex;
         justify-content: center;
@@ -81,7 +83,7 @@
         position: absolute;
         width: 180px;
         height: 53px;
-        left: 95px;
+        left: 40px;
         top: 62px;
         background: #FFFFFF;
         box-shadow: 0px 4px 23px rgba(19, 28, 62, 0.05);
@@ -139,7 +141,8 @@
         width: 284px;
         height: 66.67px;
         right: 0;
-        bottom: 0;
+        top: 510px;
+        transform: translateY(50%);
         filter: drop-shadow(0px 4px 24px rgba(16, 30, 57, 0.05));
         background: #FFFFFF;
         box-shadow: 0px 4px 22px rgba(18, 28, 53, 0.05);
@@ -154,5 +157,8 @@
         line-height: 120%;
         letter-spacing: 0.01em;
         color: #9F9F9F;
+    }
+    &_mt120px {
+        margin-top: 120px;
     }
 }

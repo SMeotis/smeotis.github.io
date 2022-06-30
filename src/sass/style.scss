@@ -1,19 +1,25 @@
-@import 'libs/reboot';
-@import 'libs/fonts';
-@import 'libs/slick';
+@import 'bases/reboot';
+@import 'bases/fonts';
 @import 'bases/variables';
 
+@import 'libs/slick';
 
 @import 'blocks/container';
 @import 'blocks/header';
+@import 'blocks/hamburger';
+@import 'blocks/shopping';
+@import 'blocks/menu';
 @import 'blocks/button';
 @import 'blocks/title';
 @import 'blocks/promo';
 @import 'blocks/support';
 @import 'blocks/services';
 @import 'blocks/trending';
+@import 'blocks/carousel';
 @import 'blocks/comments';
 @import 'blocks/comment';
 @import 'blocks/about-us';
 @import 'blocks/discont';
 @import 'blocks/footer';
+
+@import 'bases/media';

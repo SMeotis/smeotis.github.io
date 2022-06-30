@@ -15,38 +15,7 @@
         border-radius: 16px;
         transition: .5s all;
     }
-    .slick-slide:not(.slick-active) {
-        transform: scale(.43) translateX(350%);
-        z-index: 2;    
-    }
-    .slick-slide:not(.slick-active) + .slick-slide.slick-active {
-        transform: scale(.6) translateX(150%);
-        z-index: 3;
-    }
-    .slick-slide:not(.slick-active) + .slick-slide.slick-active + .slick-slide.slick-active {
-
-    }
-    .slick-slide.slick-active:not(.slick-center) {
-        transform: scale(.75) translateX(50%);
-        z-index: 4;
-    }
     
-    .slick-slide.slick-active.slick-center {
-        transform: scale(1);
-        z-index: 10;
-    }
-    .slick-slide.slick-active.slick-center + .slick-slide.slick-active{
-        transform: scale(.75) translateX(-50%);
-        z-index: 4;
-    }
-    .slick-slide.slick-active.slick-center + .slick-slide.slick-active + .slick-slide.slick-active {
-        transform: scale(.6) translateX(-150%);
-        z-index: 3;
-    }
-    .slick-slide.slick-active.slick-center + .slick-slide.slick-active + .slick-slide.slick-active + .slick-slide {
-        transform: scale(.43) translateX(-350%);
-        z-index: 2; 
-    }
     &__img {
         width: 100%;
         height: 100%;
@@ -100,11 +69,12 @@
 
     .slick-dots {
         position: absolute;
+        width: 225px;
         display: flex;
         align-items: center;
         justify-content: center;
         padding: 0;
-        top: 500px;
+        bottom: -84px;
         left: 50%;
         transform: translateX(-50%);
     }
@@ -128,7 +98,7 @@
     
     .slick-prev, .slick-next {
         position: absolute;
-        top: 500px;
+        bottom: -98px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -139,9 +109,11 @@
         filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
     }
     .slick-prev {
-        left: 37vw;
+        left: 50%;
+        transform: translateX(-165px);
     }
     .slick-next {
-        right: 37vw;
+        right: 50%;
+        transform: translateX(165px);
     }
 }
