@@ -63,6 +63,8 @@
         color: #222224;
     }
     &__customer-stars {
+        display: flex;
+        align-items: center;
         margin-top: 8px;
         font-family: 'Poppins';
         font-style: normal;
