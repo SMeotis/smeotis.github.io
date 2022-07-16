@@ -1,23 +1,24 @@
-$(document).ready(function(){
-  
-  /* Гамбургер */
-  const hamburger = document.querySelector('.hamburger'),
-  menu = document.querySelector('.menu');
+import menu from './modules/menu';
+import increaseProportionalSlickSlider from './modules/slider';
 
-/* Меню-бургер */
-  hamburger.addEventListener('click', () => {
-    menu.classList.toggle('menu__active');
-    hamburger.classList.toggle('hamburger__active');
+window.addEventListener('DOMContentLoaded', () => {
+  const prevArrowYellow = '<button type="button" class="slick-prev"><img src="icons/arrow-prev-yellow.svg"  alt="arrow-prev"></button>',
+        nextArrowYellow = '<button type="button" class="slick-next"><img src="icons/arrow-next-yellow.svg" alt="arrow-prev"></button>',
+        prevArrowBlack = '<button type="button" class="slick-prev"><img src="icons/arrow-prev-black.svg" alt="arrow-prev"></button>',
+        nextArrowBlack = '<button type="button" class="slick-next"><img src="icons/arrow-next-black.svg" alt="arrow-next"></button>';
+  menu({
+    selector: '.hamburger',
+    activeClass: 'hamburger__active',
+    menuSelector: '.menu',
+    menuActiveClass: 'hamburger__active'
   });
-
-
-  /* Карусели */
+  
   $('.trending__carousel').slick({
     centerMode: true,
     centerPadding: '50px',
-    slidesToShow: 5,
-    prevArrow: '<button type="button" class="slick-prev"><img src="icons/arrow-prev-black.svg" alt="arrow-prev"></button>',
-    nextArrow: '<button type="button" class="slick-next"><img src="icons/arrow-next-black.svg" alt="arrow-next"></button>',
+    slidesToShow: 6,
+    prevArrow: prevArrowBlack,
+    nextArrow: nextArrowBlack,
     dots: true,
     variableWidth: true,
     responsive: [
@@ -42,60 +43,13 @@ $(document).ready(function(){
     ]
   });
 
-  const slides = document.querySelectorAll("div.trending__item.slick-slide");
-  for (let i = 0; i < slides.length; i++) {
-    if (slides[i].classList.contains("slick-center")) {
-
-      slides[i].classList.add('carousel__lg');
-
-      slides[i-1].classList.add('carousel__m-left');
-
-      slides[i+1].classList.add('carousel__m-right');
-
-      slides[i-2].classList.add('carousel__s-left');
-
-      slides[i+2].classList.add('carousel__s-right');
-
-      slides[i-3].classList.add('carousel__xs-left');
-
-      slides[i+3].classList.add('carousel__xs-right');
-    }
-  }
-  $('.trending__carousel').on('afterChange', function(event, slick, currentSlide){ 
-    for (let i = 0; i < slides.length; i++) {
-      if (slides[i].classList.contains("slick-center") && slides[i].classList.contains("slick-active")) {
-        for(let j = 0; j < slides.length; j++) {
-          slides[j].classList.remove('carousel__lg', 'carousel__m-left', 'carousel__m-right', 'carousel__s-left', 'carousel__s-right', 'carousel__xs-left', 'carousel__xs-right');
-        }
-        slides[i].classList.add('carousel__lg');
-
-        slides[i-1].classList.add('carousel__m-left');
-
-        slides[i+1].classList.add('carousel__m-right');
-
-        slides[i-2].classList.add('carousel__s-left');
-
-        slides[i+2].classList.add('carousel__s-right');
-
-        slides[i-3].classList.add('carousel__xs-left');
-
-        slides[i+3].classList.add('carousel__xs-right');
-        console.log(i);
-      }
-      
-    }
-    console.log(slides);
-    
+  $('.trending__carousel').on('afterChange', function(event, slick, currentSlide){
+    increaseProportionalSlickSlider(".trending__item.slick-slide");
   });
-/*   $(".trending__carousel").on("beforeChange", function(event, slick, currentSlide, nextSlide) {
-    console.log(nextSlide);
-    console.log(typeof(nextSlide));
-  }); */
-  
 
   $('.comments__wrapper').slick({
-    prevArrow: '<button type="button" class="slick-prev"><img src="icons/arrow-prev-black.svg" alt="arrow-prev"></button>',
-    nextArrow: '<button type="button" class="slick-next"><img src="icons/arrow-next-black.svg" alt="arrow-next"></button>',
+    prevArrow: prevArrowBlack,
+    nextArrow: nextArrowBlack,
     dots: true,
     responsive: [
       {
@@ -107,10 +61,10 @@ $(document).ready(function(){
       }
     ]
   });
-
+  
   $('.about-us__wrapper').slick({
-    prevArrow: '<button type="button" class="slick-prev"><img src="icons/arrow-prev-yellow.svg" alt="arrow-prev"></button>',
-    nextArrow: '<button type="button" class="slick-next"><img src="icons/arrow-next-yellow.svg" alt="arrow-next"></button>',
+    prevArrow: prevArrowYellow,
+    nextArrow: nextArrowYellow,
     infinite: true,
     responsive: [
       {
@@ -122,4 +76,6 @@ $(document).ready(function(){
       }
     ]
   });
+
+  increaseProportionalSlickSlider(".trending__item.slick-slide");
 });
